@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +23,7 @@
       system = "aarch64-darwin";
       modules = [
         {system.stateVersion = 6;}
-        inputs.nix-flatpak.nixosModules.nix-flatpak
+        inputs.nix-homebrew.darwinModules.nix-homebrew
       ];
     };
     nixosConfigurations."lsp" = inputs.nixpkgs.lib.nixosSystem {
